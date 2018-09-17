@@ -20,7 +20,6 @@ export class FormDataService {
         var personal: Personal = {
             firstName: this.formData.firstName,
             lastName: this.formData.lastName,
-            companyName: this.formData.companyName,
             password: this.formData.password,
             email: this.formData.email
         };
@@ -33,7 +32,6 @@ export class FormDataService {
         this.formData.firstName = data.firstName;
         this.formData.lastName = data.lastName;
         this.formData.email = data.email;
-        this.formData.companyName = data.companyName;
         this.formData.password = data.password;
         // Validate Personal Step in Workflow
         this.workflowService.validateStep(STEPS.personal);
@@ -58,7 +56,9 @@ export class FormDataService {
             street: this.formData.street,
             city: this.formData.city,
             state: this.formData.state,
-            zip: this.formData.zip
+            zip: this.formData.zip,
+            companyName: this.formData.companyName,
+            phoneNumber: this.formData.phoneNumber
         };
         return address;
     }
@@ -70,6 +70,8 @@ export class FormDataService {
         this.formData.city = data.city;
         this.formData.state = data.state;
         this.formData.zip = data.zip;
+        this.formData.companyName = data.companyName;
+        this.formData.phoneNumber = data.phoneNumber;
         // Validate Address Step in Workflow
         this.workflowService.validateStep(STEPS.address);
     }

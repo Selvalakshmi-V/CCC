@@ -4,6 +4,7 @@ export class FormData {
     companyName: string = '';
     password: string = '';
     email: string = '';
+    phoneNumber: string = '';
     work: string = '';
     street: string = '';
     city: string = '';
@@ -25,7 +26,6 @@ export class FormData {
 export class Personal {
     firstName: string = '';
     lastName : string = '';
-    companyName: string = '';
     password: string = '';
     email: string = '';
 }
@@ -35,4 +35,6 @@ export class Address {
     city: string = '';
     state: string = '';
     zip: string = '';
+    companyName: string = '';
+    phoneNumber: string = '';
 }

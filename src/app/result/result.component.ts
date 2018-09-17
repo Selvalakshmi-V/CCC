@@ -2,6 +2,8 @@ import { Component, OnInit, Input }   from '@angular/core';
 
 import { FormData }                   from '../data/formData.model';
 import { FormDataService }            from '../data/formData.service';
+import { Router } from '@angular/router';
+import { TempService } from '../data/temp.service';
 
 @Component ({
     selector:     'mt-wizard-result'
@@ -9,11 +11,11 @@ import { FormDataService }            from '../data/formData.service';
 })
 
 export class ResultComponent implements OnInit {
-    title = 'Thanks for staying tuned!';
+    title = 'You are successfully Registered!';
     @Input() formData: FormData;
     isFormValid: boolean = false;
     
-    constructor(private formDataService: FormDataService) {
+    constructor(private formDataService: FormDataService, private router: Router, private tempService: TempService) {
     }
 
     ngOnInit() {

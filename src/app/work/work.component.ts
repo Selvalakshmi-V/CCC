@@ -12,6 +12,10 @@ export class WorkComponent implements OnInit {
     title = 'Please answer your security question';
     workType: string;
     form: any;
+    Question1;
+    Question2;
+    answer1;
+    answer2;
     
     constructor(private router: Router, private formDataService: FormDataService) {
     }

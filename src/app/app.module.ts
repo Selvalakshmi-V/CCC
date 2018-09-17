@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormDataService } from './data/formData.service';
 import { WorkflowService } from './workflow/workflow.service';
 import { SignupComponent } from './signup/signup.component';
+import { OfferComponent } from './offer/offer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SignupComponent } from './signup/signup.component';
     WorkComponent,
     AddressComponent,
     ResultComponent,
-    SignupComponent 
+    SignupComponent,
+    OfferComponent 
   ],
   imports: [
     BrowserModule,

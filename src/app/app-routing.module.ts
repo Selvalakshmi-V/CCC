@@ -1,3 +1,4 @@
+import { OfferComponent } from './offer/offer.component';
 import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,6 +9,7 @@ import { ResultComponent }      from './result/result.component';
 
 import { WorkflowGuard }        from './workflow/workflow-guard.service';
 import { WorkflowService }      from './workflow/workflow.service';
+import { SignupComponent } from './signup/signup.component';
 
 
 export const appRoutes: Routes = [
@@ -19,6 +21,10 @@ export const appRoutes: Routes = [
     { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },
     // 4th Route
     { path: 'result',  component: ResultComponent, canActivate: [WorkflowGuard] },
+    //7th Route
+    { path: 'offer', component: OfferComponent},
+    //8th Route
+    {path: 'signup', component: SignupComponent},
     // 5th Route
     { path: '',   redirectTo: '/personal', pathMatch: 'full' },
     // 6th Route

@@ -10,7 +10,7 @@ import { FormDataService }     from '../data/formData.service';
 })
 
 export class AddressComponent implements OnInit {
-    title = 'Where do you live?';
+    title = 'Other Details';
     address: Address;
     form: any;
     
