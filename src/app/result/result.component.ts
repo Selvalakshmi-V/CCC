@@ -28,6 +28,6 @@ export class ResultComponent implements OnInit {
         alert('Excellent Job!');
         this.formData = this.formDataService.resetFormData();
         this.isFormValid = false;
-        this.router.navigate(['/offer']);
+        this.router.navigate(['/homePage']);
     }
 }

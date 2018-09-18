@@ -10,11 +10,17 @@ import { ResultComponent } from './result/result.component';
 import { WorkflowGuard } from './workflow/workflow-guard.service';
 import { WorkflowService } from './workflow/workflow.service';
 import { SignupComponent } from './signup/signup.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { IssueOffersComponent } from './issue-offers/issue-offers.component';
+import { SelectUserComponent } from './select-user/select-user.component';
 
 
 export const appRoutes: Routes = [
 
   { path: 'offer', component: OfferComponent },
+  { path: 'homePage', component: HomePageComponent },
+  { path: 'issueOffers', component: IssueOffersComponent },
+  { path: 'selectUser', component: SelectUserComponent },
   {
     path: 'signup', component: SignupComponent, children: [
       { path: 'personal', component: PersonalComponent },
@@ -26,10 +32,9 @@ export const appRoutes: Routes = [
       { path: 'result', component: ResultComponent, canActivate: [WorkflowGuard] },
     ]
   },
-
   { path: '', redirectTo: 'signup/personal', pathMatch: 'full' },
 
-  { path: '**', component: PersonalComponent }
+  // { path: '**', component: PersonalComponent }
 ];
 
 @NgModule({
