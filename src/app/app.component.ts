@@ -17,4 +17,8 @@ export class AppComponent{
     this.temp = this.tempService.temp;
   }
 
+  aa() {
+    this.router.navigate(['/signup']);
+  }
+
 }

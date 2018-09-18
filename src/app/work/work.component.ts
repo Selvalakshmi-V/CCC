@@ -37,14 +37,14 @@ export class WorkComponent implements OnInit {
     goToPrevious(form: any) {
         if (this.save(form)) {
             // Navigate to the personal page
-            this.router.navigate(['/personal']);
+            this.router.navigate(['signup/personal']);
         }
     }
 
     goToNext(form: any) {
         if (this.save(form)) {
             // Navigate to the address page
-            this.router.navigate(['/address']);
+            this.router.navigate(['signup/address']);
         }
     }
 }

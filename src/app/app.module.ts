@@ -24,6 +24,7 @@ import { FormDataService } from './data/formData.service';
 import { WorkflowService } from './workflow/workflow.service';
 import { SignupComponent } from './signup/signup.component';
 import { OfferComponent } from './offer/offer.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { OfferComponent } from './offer/offer.component';
     AddressComponent,
     ResultComponent,
     SignupComponent,
-    OfferComponent 
+    OfferComponent,
+    HomePageComponent 
   ],
   imports: [
     BrowserModule,

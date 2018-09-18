@@ -1,40 +1,41 @@
 import { OfferComponent } from './offer/offer.component';
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PersonalComponent }    from './personal/personal.component';
-import { WorkComponent }        from './work/work.component';
-import { AddressComponent }     from './address/address.component';
-import { ResultComponent }      from './result/result.component';
+import { PersonalComponent } from './personal/personal.component';
+import { WorkComponent } from './work/work.component';
+import { AddressComponent } from './address/address.component';
+import { ResultComponent } from './result/result.component';
 
-import { WorkflowGuard }        from './workflow/workflow-guard.service';
-import { WorkflowService }      from './workflow/workflow.service';
+import { WorkflowGuard } from './workflow/workflow-guard.service';
+import { WorkflowService } from './workflow/workflow.service';
 import { SignupComponent } from './signup/signup.component';
 
 
 export const appRoutes: Routes = [
-    // 1st Route
-    { path: 'personal',  component: PersonalComponent },
-    // 2nd Route
-    { path: 'work',  component: WorkComponent, canActivate: [WorkflowGuard] },
-    // 3rd Route
-    { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },
-    // 4th Route
-    { path: 'result',  component: ResultComponent, canActivate: [WorkflowGuard] },
-    //7th Route
-    { path: 'offer', component: OfferComponent},
-    //8th Route
-    {path: 'signup', component: SignupComponent},
-    // 5th Route
-    { path: '',   redirectTo: '/personal', pathMatch: 'full' },
-    // 6th Route
-    { path: '**', component: PersonalComponent }
+
+  { path: 'offer', component: OfferComponent },
+  {
+    path: 'signup', component: SignupComponent, children: [
+      { path: 'personal', component: PersonalComponent },
+
+      { path: 'work', component: WorkComponent, canActivate: [WorkflowGuard] },
+
+      { path: 'address', component: AddressComponent, canActivate: [WorkflowGuard] },
+
+      { path: 'result', component: ResultComponent, canActivate: [WorkflowGuard] },
+    ]
+  },
+
+  { path: '', redirectTo: 'signup/personal', pathMatch: 'full' },
+
+  { path: '**', component: PersonalComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, { useHash: true} )],
+  imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
   exports: [RouterModule],
   providers: [WorkflowGuard]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }

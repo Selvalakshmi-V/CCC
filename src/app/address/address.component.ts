@@ -34,14 +34,14 @@ export class AddressComponent implements OnInit {
     goToPrevious(form: any) {
         if (this.save(form)) {
             // Navigate to the work page
-            this.router.navigate(['/work']);
+            this.router.navigate(['signup/work']);
         }
     }
 
     goToNext(form: any) {
         if (this.save(form)) {
             // Navigate to the result page
-            this.router.navigate(['/result']);
+            this.router.navigate(['signup/result']);
         }
     }
 }
