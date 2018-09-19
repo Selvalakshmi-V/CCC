@@ -1,0 +1,52 @@
+<section style="background:#efefe9;">
+    <div class="container">
+        <div class="board">
+            <div class="tab-content">
+                <form #orderReportForm="ngForm" class="editForm" novalidate>
+                    <div class="form-horizontal">
+                        <div class="tab-pane fade in active">
+                            <h4 class="head text-center">Order Report</h4>
+                            <div class='row'>
+                                <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                                    <div class="form-group">
+                                        <label class="control-label" for="percent">Company Name</label>
+                                        <input class="form-control input-md" #percents="ngModel" required id="percent"
+                                            name="firstname" type="text" placeholder="Company Name" [(ngModel)]="percent">
+                                        <div class="alert alert-danger" *ngIf="percents.invalid && percents.touched">Field
+                                            is required</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label" for="from">City</label>
+                                        <input class="form-control input-md" #froms="ngModel" required id="from" name="from"
+                                            type="text" placeholder="City" [(ngModel)]="from">
+                                        <div class="alert alert-danger" *ngIf="froms.invalid && froms.touched">Field is
+                                            required</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="to">State</label>
+                                        <input class="form-control input-md" #tos="ngModel" required id="to" name="to"
+                                            type="text" placeholder="State" [(ngModel)]="to">
+                                        <div class="alert alert-danger" *ngIf="tos.invalid && tos.touched">Field is
+                                            required</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="to">Zip Code</label>
+                                        <input class="form-control input-md" #Codes="ngModel" required id="code" name="code"
+                                            type="text" placeholder="Zip Code" [(ngModel)]="code">
+                                        <div class="alert alert-danger" *ngIf="Codes.invalid && Codes.touched">Field is
+                                            required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center space-20">
+                                <button class="btn btn-outline-rounded btn-info btn-large" [disabled]="!orderReportForm.valid" (click)="goToNext(orderReportForm)">
+                                    Search <span style="margin-left:10px;" class=""></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,54 @@
+<section style="background:#efefe9;">
+  <div class="container">
+    <div class="board">
+      <div class="tab-content">
+        <form #offerForm="ngForm" class="editForm" novalidate>
+          <div class="form-horizontal">
+            <div class="tab-pane fade in active">
+              <h4 class="head text-center">SEND EMAIL</h4>
+              <div class='row'>
+                <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                  <div class="form-group">
+                    <label class="control-label" for="Question1">Email Type</label>
+                    <select class="form-control">
+                      <!-- <option selected>Choose...</option> -->
+                      <option value="1">Alert Email</option>
+                      <option value="2">Invoice</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="Question1">Select User</label>
+                    <ng-multiselect-dropdown [placeholder]="'Select the User'" [data]="dropdownList" [(ngModel)]="selectedItems"
+                      [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)"
+                      id="selectUser" name="selectUser">
+                    </ng-multiselect-dropdown>
+                    <!-- <div class="alert alert-danger" *ngIf="selectUser.invalid && selectUser.touched">Field is required</div> -->
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label" for="percent">Subject</label>
+                    <input class="form-control input-md" type="text" placeholder="Subject">
+                    <!-- <div class="alert alert-danger" *ngIf="percents.invalid && percents.touched">Field is required</div> -->
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label" for="percent">Message</label>
+                        <textarea id="message" class="form-control" rows="6" ></textarea>
+                      <!-- <div class="alert alert-danger" *ngIf="percents.invalid && percents.touched">Field is required</div> -->
+                    </div>
+
+                </div>
+              </div>
+              <div class="form-group text-center space-20">
+                <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;"
+                    class=""></span> Cancel </button>
+                <button class="btn btn-outline-rounded btn-info" [disabled]="!offerForm.valid" (click)="goToNext(offerForm)">
+                  Add <span style="margin-left:10px;" class=""></span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,40 +1,36 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
 
 export interface PeriodicElement {
   name: string;
-  position: number;
   joining: string;
-  symbol: number;
   image: string;
-  reports: number;
+  emailId: string;
+  company: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Yiorgos Avraamu', joining: 'Jun 11, 2018', reports: 5, symbol: 5000, image: '1.jpg' },
-  { position: 2, name: 'Avram Tarasios', joining: 'Jun 11, 2018', reports: 9, symbol: 9000, image: '2.jpg' },
-  { position: 3, name: 'Quintin Ed', joining: 'Jun 11, 2018', reports: 7, symbol: 7000, image: '3.jpg' },
-  { position: 4, name: 'Enéas Kwadwo', joining: 'Jun 11, 2018', reports: 8, symbol: 8000, image: '4.jpg' },
-  { position: 5, name: 'Friderik Dávid', joining: 'Jun 11, 2018', reports: 10, symbol: 10000, image: '6.jpg' },
+  { name: 'Yiorgos Avraamu', company: 'Theme Info', joining: 'Jun 11, 2018', image: '1.jpg', emailId: 'yiorgas@gmail.com' },
+  { name: 'Avram Tarasios', company: 'Walmart', joining: 'Jun 11, 2018', image: '2.jpg', emailId: 'tarasios@gmail.com' },
+  { name: 'Quintin Ed', company: 'Exxon Mobil', joining: 'Jun 11, 2018', image: '3.jpg', emailId: 'quintin@gmail.com' },
+  { name: 'Enéas Kwadwo', company: 'Berkshire Hathaway', joining: 'Jun 11, 2018', image: '4.jpg', emailId: 'kwadwo@gmail.com' },
+  { name: 'Friderik Dávid', company: 'Apple Inc.', joining: 'Jun 11, 2018', image: '6.jpg', emailId: 'friderik@gmail.com' },
 ];
 
-
 @Component({
-  selector: 'app-select-user',
-  templateUrl: './select-user.component.html',
-  styleUrls: ['./select-user.component.css']
+  selector: 'app-activate-form',
+  templateUrl: './activate-form.component.html',
+  styleUrls: ['./activate-form.component.css']
 })
-export class SelectUserComponent implements OnInit {
+export class ActivateFormComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['select', 'name', 'emailId', 'company', 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 
@@ -56,8 +52,8 @@ export class SelectUserComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  goToNext() {
-    this.router.navigate(['/sendOffer']);
+  aa() {
+    console.log('Activated')
   }
 
 }
