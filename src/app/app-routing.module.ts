@@ -1,3 +1,8 @@
+import { CardComponent } from './card/card.component';
+import { AllReportComponent } from './all-report/all-report.component';
+import { ReportPriceListComponent } from './report-price-list/report-price-list.component';
+import { UserHistoryComponent } from './user-history/user-history.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ActivateFormComponent } from './activate-form/activate-form.component';
@@ -19,6 +24,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { IssueOffersComponent } from './issue-offers/issue-offers.component';
 import { SelectUserComponent } from './select-user/select-user.component';
 import { SendEmailComponent } from './send-email/send-email.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 
 
@@ -34,6 +40,12 @@ export const appRoutes: Routes = [
   { path: 'activateForm', component: ActivateFormComponent },
   { path: 'editProfile', component: MainPageComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'firstPage', component: FirstPageComponent },
+  { path: 'userHistory', component: UserHistoryComponent },
+  { path: 'reportPriceList', component: ReportPriceListComponent },
+  { path: 'myOrders', component: MyOrdersComponent },
+  { path: 'allReport', component: AllReportComponent },
+  { path: 'card', component: CardComponent },
   {
     path: 'signup', component: SignupComponent, children: [
       { path: 'personal', component: PersonalComponent },

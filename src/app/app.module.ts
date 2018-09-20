@@ -3,7 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +19,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { WorkComponent } from './work/work.component';
 import { AddressComponent } from './address/address.component';
 import { ResultComponent } from './result/result.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 /* Routing Module */
@@ -39,6 +39,13 @@ import { SendEmailComponent } from './send-email/send-email.component';
 import { ActivateFormComponent } from './activate-form/activate-form.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FirstPageComponent } from './first-page/first-page.component';
+import { UserHistoryComponent } from './user-history/user-history.component';
+import { ReportPriceListComponent } from './report-price-list/report-price-list.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { AllReportComponent } from './all-report/all-report.component';
+import { CardComponent } from './card/card.component';
+
 
 @NgModule({
   declarations: [
@@ -58,10 +65,18 @@ import { ProfileComponent } from './profile/profile.component';
     SendEmailComponent,
     ActivateFormComponent,
     MainPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    FirstPageComponent,
+    UserHistoryComponent,
+    ReportPriceListComponent,
+    MyOrdersComponent,
+    AllReportComponent,
+    CardComponent,
+
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
