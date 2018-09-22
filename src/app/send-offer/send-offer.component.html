@@ -1,55 +1,45 @@
-<section style="background:#efefe9;">
-  <div class="container">
-    <div class="board">
-      <div class="tab-content">
+<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css" />
+<link href="../assets/css/table.css" rel="stylesheet">
+<script type="text/javascript" src="../assets/js/jquery.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/admin.js"></script>
+<!-- <body> -->
+<div class="container">
+  <h4 class="head" style="margin-left:350px;">SEND OFFER</h4>
+  <div class="row" style="padding-left: 170px;padding-top:20px;margin-bottom:-30px;">
+    <div class="col-sm-3 col-lg-3">
+      <div id="hosting-table">
+        <div class="table_style4">
+          <div class="column">
+            <ul>
+              <li><strong>Select Offer</strong></li>
+              <li class="header_row">
+                <h3>Promo Offer</h3>
+              </li>
+              <li>7% OFF ON YOUR PURCHASE</li>
+              <li>Valid From 20-09-2018</li>
+              <li>Valid To 25-09-2018</li>
+              <li>Use Code: <strong>PO202509</strong></li>
+              <li class="footer_row"><a class="hosting-button" (click)="sendOffers('1')">Send Offers</a></li>
+            </ul>
+          </div>
+          <!--/ column-->
+        </div>
+        <!--/ Table Style-->
       </div>
-      <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css" />
+      <!--/ Hosting Table-->
+    </div><!-- /span3 -->
 
-      <!-- DATA TABLE CSS -->
-      <link href="../assets/css/table.css" rel="stylesheet">
-
-      <script type="text/javascript" src="../assets/js/jquery.js"></script>
-      <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-      <script type="text/javascript" src="../assets/js/admin.js"></script>
-
-      <body>
-        <div class="container">
-          <h4 class="head" style="margin-left:350px;">SEND OFFER TO USER</h4>
-          <div class="row" style="padding-left: 170px;padding-top:20px;margin-bottom:-30px;">
-            <div class="col-sm-3 col-lg-3">
-              <div id="hosting-table">
-                <div class="table_style4">
-                  <div class="column">
-                    <ul>
-                      <li><strong>Select Offer</strong></li>
-                      <li class="header_row">
-                        <h3>Promo Offer</h3>
-                      </li>
-                      <li>7% OFF ON YOUR PURCHASE</li>
-                      <li>Valid From 20-09-2018</li>
-                      <li>Valid To 25-09-2018</li>
-                      <li>Use Code: <strong>PO202509</strong></li>
-                      <li class="footer_row"><a class="hosting-button" (click) = "sendOffers('1')">Send Offers</a></li>
-                    </ul>
-                  </div>
-                  <!--/ column-->
-                </div>
-                <!--/ Table Style-->
-              </div>
-              <!--/ Hosting Table-->
-            </div><!-- /span3 -->
-
-            <div class="col-sm-3 col-lg-3">
-              <div id="hosting-table">
-                <div class="table_style4">
-                  <div class="column">
-                    <ul>
-                      <li><strong>Select Offer</strong></li>
-                      <li class="header_row">
-                        <h3>Referral Offer</h3>
-                        <!-- <img src="../../assets/images/download1.jpg" style="margin-top:-10px;" alt="Promo Offer"> -->
-                        <!-- </li>
+    <div class="col-sm-3 col-lg-3">
+      <div id="hosting-table">
+        <div class="table_style4">
+          <div class="column">
+            <ul>
+              <li><strong>Select Offer</strong></li>
+              <li class="header_row">
+                <h3>Referral Offer</h3>
+                <!-- <img src="../../assets/images/download1.jpg" style="margin-top:-10px;" alt="Promo Offer"> -->
+                <!-- </li>
                       <li>Disk Space 2000 MB <a class="tt" href="#">(?)<span class="tooltip"><span class="triangle-obtuse">Contrary
                               to popular belief. It has roots in a classical Latin</span></span></a></li>
                       <li>Bandwidth Unmetered</li>
@@ -63,29 +53,27 @@
                       <li>Full Privacy</li>
                       <li class="footer_row"><a href="#" class="hosting-button">Add To Cart</a></li> -->
 
-                      <li>5% OFF ON YOUR PURCHASE</li>
-                      <li>Valid From 22-09-2018</li>
-                      <li>Valid To 27-09-2018</li>
-                      <li>Use Code: <strong>PO222709</strong></li>
-                      <li class="footer_row"><a class="hosting-button waves-effect waves-light" (click) = "sendOffers('2')">Send Offers</a></li>
-                    </ul>
-                  </div>
-                  <!--/ column-->
-                </div>
-                <!--/ Table Style-->
-              </div>
-              <!--/ Hosting Table-->
-            </div><!-- /span3 -->
-          </div><!-- /row -->
-        </div><!-- /container -->
+              <li>5% OFF ON YOUR PURCHASE</li>
+              <li>Valid From 22-09-2018</li>
+              <li>Valid To 27-09-2018</li>
+              <li>Use Code: <strong>PO222709</strong></li>
+              <li class="footer_row"><a class="hosting-button waves-effect waves-light" (click)="sendOffers('2')">Send
+                  Offers</a></li>
+            </ul>
+          </div>
+          <!--/ column-->
+        </div>
+        <!--/ Table Style-->
+      </div>
+      <!--/ Hosting Table-->
+    </div><!-- /span3 -->
+  </div><!-- /row -->
+</div>
 
-      </body>
-      <script type="text/javascript" src="../assets/js/datatables/jquery.dataTables.js"></script>
-      <script type="text/javascript" charset="utf-8">
-        $(document).ready(function () {
-          $('#dt1').dataTable();
-        });
-      </script>
-    </div>
-  </div>
-</section>
+<!-- </body> -->
+<script type="text/javascript" src="../assets/js/datatables/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function () {
+    $('#dt1').dataTable();
+  });
+</script>

@@ -10,22 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-/* Feature Components */
 import { PersonalComponent } from './personal/personal.component';
 import { WorkComponent } from './work/work.component';
 import { AddressComponent } from './address/address.component';
 import { ResultComponent } from './result/result.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
-/* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
-
-/* Shared Service */
 import { FormDataService } from './data/formData.service';
 import { WorkflowService } from './workflow/workflow.service';
 import { SignupComponent } from './signup/signup.component';
@@ -71,10 +63,11 @@ import { CardComponent } from './card/card.component';
     ReportPriceListComponent,
     MyOrdersComponent,
     AllReportComponent,
-    CardComponent,
-
+    CardComponent
   ],
   imports: [
+   
+    
     BrowserModule,
     NgbModule,
     MatFormFieldModule,

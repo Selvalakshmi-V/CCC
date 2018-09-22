@@ -1,15 +1,32 @@
-.bg-dark {
-    background-image: -webkit-linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
+
+    /* background-image: -webkit-linear-gradient(45deg, #0288d1 0%, #26c6da 100%); */
     /* -webkit-linear-gradient(45deg, #FF5252 0%, #f48fb1 100%)
     -webkit-linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
     -webkit-linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%); */
     /* linear-gradient(120deg, #00e4d0, #5983e8); */
-}
 
-.dropdown-item:hover {
-    background-image: -webkit-linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
-}
 
-/* .nav-item:active {
+/* .dropdown-item:hover {
     background-image: -webkit-linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
 } */
+
+ /* .nav-item:active {
+    background-image: -webkit-linear-gradient(45deg, #0288d1 0%, #26c6da 100%);
+}  */
+
+
+
+.padding {
+    padding-top: 10px;
+    padding-left: -2000px;
+}
+.align {
+    border: 2px;
+    padding-right: 10px;
+    border-color: brown;
+}
+@media only screen and (max-width: 768px){
+    .ps{
+        padding-top:30px;
+    }
+}

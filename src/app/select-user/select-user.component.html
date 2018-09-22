@@ -1,83 +1,72 @@
-<section style="background:#efefe9;">
-  <div class="container">
-    <div class="board">
-      <div class="tab-content">
-        <!-- <mat-form-field>
+<!-- <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field> -->
-        <br>
-        <h4 class="head text-center">ISSUE OFFER</h4>
-        <mat-form-field appearance="outline" style="padding-left:10px;padding-top:10px;">
-          <mat-label>Filter</mat-label>
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-          <!-- <md-icon md-font-icon="fa fa-search"></md-icon> -->
-        </mat-form-field>
-        <span style="margin-left:320px;">
-          <!-- <mat-label style="font-size:16pt;">Select Offer</mat-label> -->
-          <mat-radio-group style="padding-right: 20px;">
-            <mat-radio-button value="1" style="padding-left:20px;padding-right: 20px;">Promo Offer</mat-radio-button>
-            <mat-radio-button value="2">Referral Offer</mat-radio-button>
-          </mat-radio-group>
-        </span>
+<br>
+<h4 class="head text-center">ISSUE OFFER</h4>
+<mat-form-field appearance="outline" style="padding-left:10px;padding-top:10px;">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  <mat-icon matSuffix> search </mat-icon>
+ </mat-form-field>
+<span style="margin-left:320px;">
+  <!-- <mat-label style="font-size:16pt;">Select Offer</mat-label> -->
+  <mat-radio-group style="margin-right: 10px;">
+    <mat-radio-button value="1" style="padding-left:390px;padding-right: 30px;">Promo Offer</mat-radio-button>
+    <mat-radio-button value="2">Referral Offer</mat-radio-button>
+  </mat-radio-group>
+</span>
 
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-          <!-- Checkbox Column -->
-          <ng-container matColumnDef="select">
-            <th mat-header-cell *matHeaderCellDef>
-              <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
-                [indeterminate]="selection.hasValue() && !isAllSelected()">
-              </mat-checkbox>
-            </th>
-            <td mat-cell *matCellDef="let row">
-              <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-                [checked]="selection.isSelected(row)">
-              </mat-checkbox>
-            </td>
-          </ng-container>
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select" style="padding-left:20px;">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+        [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
 
-          <!-- Position Column -->
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef>User Profile</th>
-            <td mat-cell *matCellDef="let element"> <img class="img-avatar" src="../assets/img/avatars/{{ element.image }}"
-                alt="admin@bootstrapmaster.com" style="padding-bottom:10px;padding-top:10px;"></td>
-          </ng-container>
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef style="font-size:11pt;"><strong> User Profile </strong></th>
+    <td mat-cell *matCellDef="let element"> <img class="img-avatar" src="../assets/img/avatars/{{ element.image }}" alt="admin@bootstrapmaster.com"
+        style="padding-bottom:10px;padding-top:10px;"></td>
+  </ng-container>
 
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> User Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}}
-              <div class="small text-muted">
-                Registered: {{element.joining}}</div>
-            </td>
-          </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef style="font-size:11pt;"> <strong>User Name </strong></th>
+    <td mat-cell *matCellDef="let element"> {{element.name}}
+      <div class="small text-muted">
+        Registered: {{element.joining}}</div>
+    </td>
+  </ng-container>
 
-          <!-- Weight Column -->
-          <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef> Ordered Reports </th>
-            <td mat-cell *matCellDef="let element"> {{element.reports}}
-              <div class="float-right">
-                <small class="text-muted">Jun 11, 2018 - Jul 10, 2018</small>
-              </div>
-            </td>
-          </ng-container>
-
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef> Purchase Amount </th>
-            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
-          </tr>
-        </table>
-        <div class="form-group text-center">
-          <button class="btn btn-success btn-outline-rounded btn-info" (click)="goToNext()">
-            Proceed To Next Step <span style="margin-left:10px;"></span></button>
-        </div>
-
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef style="font-size:11pt;"><strong> Ordered Reports </strong></th>
+    <td mat-cell *matCellDef="let element"> {{element.reports}}
+      <div class="float-right">
+        <small class="text-muted">Jun 11, 2018 - Jul 10, 2018</small>
       </div>
-    </div>
-  </div>
-</section>
+    </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef style="font-size:11pt;"><strong> Purchase Amount </strong></th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+  </tr>
+</table>
+<div class="form-group text-center">
+  <button class="btn btn-success btn-outline-rounded btn-info" (click)="goToNext()">
+    Proceed To Next Step <span style="margin-left:10px;"></span></button>
+</div>

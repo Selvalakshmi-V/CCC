@@ -200,6 +200,8 @@ tbody tr:hover {
 .column1 {
   width: 85px;
   padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .column2 {
